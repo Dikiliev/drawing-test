@@ -16,8 +16,10 @@ public class ColorButton : MonoBehaviour
         GetComponent<Button>().onClick.AddListener(Select);
     }
 
+
     public void Select()
     {
-        FindObjectOfType<Painter>().SetColor(_color);
+        DrawManager.Instance.SetColor(_color);
+        UI.Instance.SelectColor(GetComponent<RectTransform>());
     }
 }
